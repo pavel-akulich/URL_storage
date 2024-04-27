@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "url-storage"
+version = "0.1.0"
+description = ""
+authors = ["Pavel Akulich <pavelakulich1999@gmail.com>"]
+readme = "README.md"
+packages = [{include = "url_storage"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0.4"
+psycopg2-binary = "^2.9.9"
+pillow = "^10.3.0"
+djangorestframework = "^3.15.1"
+python-dotenv = "^1.0.1"
+djangorestframework-simplejwt = "^5.3.1"
+drf-yasg = "^1.21.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
