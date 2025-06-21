@@ -1,6 +1,5 @@
 # API application for storing user links
 
-[Russian](../README.md) | **English**
 
 ## Description of the project
 User link storage application is a backend part of an application created in Python programming language using Django REST framework.

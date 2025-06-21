@@ -1,62 +1,61 @@
-# API приложение для хранения ссылок пользователя
+# API application for storing user links
 
-**Russian** | [English](docs_eng/README.md)
 
-## Описание проекта
-Приложение для хранения ссылок пользователя представляет собой backend часть приложения, созданного на языке программирования Python с использованием Django REST framework.
-Приложение позволяет пользователям сохранять свои ссылки, а также просматривать их, редактировать и удалять. При сохранении ссылки пользователь передает только ссылку, вся остальная
-информация о ней заполняется автоматически. Пользователи также могут создавать коллекции для своих ссылок и сегрегировать их по своему усмотрению.  
+## Description of the project
+User link storage application is a backend part of an application created in Python programming language using Django REST framework.
+The application allows users to save their links, as well as view, edit and delete them. When saving a link, the user passes only the link, all other
+information about it is filled in automatically. Users can also create collections for their links and segregate them as they see fit.  
 
-## Составляющие части проекта
+## Components of the project
 
-Проект состоит из следующих компонентов:
+The project consists of the following components:
 
-1. **Пользователи:**
-    - Пользователь имеет возможность зарегистрироваться (email, пароль)   
-    - Пользователь имеет возможность сменить пароль   
-    - Пользователь имеет возможность сбросить пароль   
-    - Пользователь имеет возможность аутентифицироваться   
-    - Пользователь имеет возможность управлять своими ссылками
-    - Пользователь имеет возможность управлять своими коллекциями
+1. **Users:**
+    - User can register (email, password)   
+    - User can change password   
+    - User can reset password   
+    - User can authenticate   
+    - User can manage their links
+    - User can manage their collections
 
-2. **Ссылки:**
-   - Содержит заголовок страницы (ссылки)
-   - Содержит краткое описание страницы
-   - Содержит ссылка на страницу
-   - Содержит превью страницы
-   - Содержит тип ссылки (website, book, article, music, video)
-   - Содержит дату и время создания
-   - Содержит дату и время последнего обновления
+2. **Links:**
+   - Contains the page title (links)
+   - Contains a short description of the page
+   - Contains a link to the page
+   - Contains a preview of the page
+   - Contains the type of link (website, book, article, music, video)
+   - Contains date and time of creation
+   - Contains date and time of last update
 
-3. **Коллекции:**
-   - Содержит название коллекции
-   - Содержит описание коллекции
-   - Содержит принадлежащие ей ссылки
-   - Содержит дату и время создания
-   - Содержит дату и время последнего обновления
+3. **Collections:**
+   - Contains the name of the collection
+   - Contains a description of the collection
+   - Contains links belonging to the collection
+   - Contains the date and time of creation
+   - Contains the date and time of the last update
    
-## Технологии
-   - Проект разработан на языке программирования `Python` с использованием `Django REST framework`
-   - Для работы с базой данных `PostgreSQL` используется сторонняя библиотека `psycopg2-binary`
-   - В проекте подключена Swagger документация при помощи библиотеки `drf-yasg`
-   - Для работы с изображениями используется библиотека `pillow`
-   - Для получения информации о странице используются библиотеки `beautifulsoup4` и `requests`
-   - Для управления виртуальным окружением используется инструмент `poetry`
-   - Для взаимодействия с переменными окружения применяется библиотека `python-dotenv`
-   - Для более легкого и простого развёртывания проекта при помощи `Docker` используется технология контейнеризации
+## Technology
+   - The project is developed in `Python` programming language using `Django REST framework`
+   - A third-party library `psycopg2-binary` is used to work with `PostgreSQL` database
+   - Swagger documentation is connected in the project using `drf-yasg` library
+   - The `pillow` library is used to work with images
+   - The `beautifulsoup4` and `requests` libraries are used to get information about the page
+   - The `poetry` tool is used to control the virtual environment
+   - The `python-dotenv` library is used to interact with environment variables
+   - Containerization technology is used for easier and simpler project deployment using `Docker`
 
-## Запуск проекта при помощи Docker
-   - Клонируйте репозиторий https://github.com/pavel-akulich/URL_storage
-   - В корневой директории проекта создайте файл `.env` и скопируйте в него содержимое файла `.env.sample`, указав необходимые значения (база данных, email сервер)
-   - При помощи команды `docker compose up --build` соберите и запустите все сервисы
-   - База данных создастся автоматически, после чего применятся миграции и база данных наполнится тестовыми данными из `testdata_for_db.json`
-   - После успешного выполнения предыдущего шага, приложение будет доступно по адресу http://localhost:8000/
+## Start a project using Docker
+   - Clone the repository https://github.com/pavel-akulich/URL_storage
+   - In the root directory of the project, create a `.env` file and copy the contents of the `.env.sample` file into it, specifying the necessary values (database, email server).
+   - Use the `docker compose up --build` command to build and start all services
+   - The database will be created automatically, after which the migrations will be applied and the database will be populated with test data from `testdata_for_db.json`.
+   - After successful completion of the previous step, the application will be available at http://localhost:8000/
 
-## API документация
-После успешного запуска сервера Swagger документация будет доступна по следующим адресам: http://localhost:8000/ или http://localhost:8000/docs/
+## API documentation
+After successful launch of the server, Swagger documentation will be available at the following addresses: http://localhost:8000/ or http://localhost:8000/docs/
 
-## Примечания
-   - Проект может быть доработан и расширен для более широкого использования
-   - Email сервер используется в проекте для реализации сброса пароля пользователя
-   - Переменные окружения, необходимые для работы проекта можно посмотреть в файле `.env.sample`
-   - Все необходимые зависимости находятся в файлах `pyproject.toml` и `poetry.lock`
+## Notes
+   - The project can be modified and extended for wider use
+   - Email server is used in the project to implement resetting of user password
+   - Environment variables required for the project can be viewed in `.env.sample` file
+   - All necessary dependencies are located in `pyproject.toml` and `poetry.lock` files
